@@ -58,9 +58,14 @@ func getCommand() map[string]cliCommand {
 			callback:    callBackExit,
 		},
 		"map": {
-			name:        "map",
+			name:        "Next",
 			description: "Prints area the commmand",
-			callback:    callBackMap,
+			callback:    callBackMapNext,
+		},
+		"mapv": {
+			name:        "Prev",
+			description: "Prints area the commmand",
+			callback:    callBackMapPrev,
 		},
 	}
 }

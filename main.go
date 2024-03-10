@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"time"
 
 	"github.com/trantho123/pokedexcli/internal/pokeapi"
 )
@@ -15,8 +17,11 @@ type config struct {
 func main() {
 	fmt.Print("start ...\n")
 	conf := config{
-		pokeapiclient: pokeapi.NewClient(),
+		pokeapiclient: pokeapi.NewClient(time.Hour),
 	}
-	startRepl(&conf)
+	err := startRepl(&conf)
+	if err != nil {
+		log.Fatalln(err)
+	}
 
 }
